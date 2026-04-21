@@ -16,7 +16,7 @@ A simple, dark-themed web application that calculates a user's age in years, mon
 ## Project Structure
 
 ```
-age-calculator/
+CodeAlpha_AgeCalculator/
 ├── index.html
 ├── Styles/
 │   └── style.css

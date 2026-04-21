@@ -34,8 +34,8 @@ No installation or build tools required.
 2. Open `index.html` in any modern web browser.
 
 ```bash
-git clone https://github.com/Orah-23/age-calculator.git
-cd age-calculator
+git clone https://github.com/Orah-23/CodeAlpha_AgeCalculator.git
+cd CodeAlpha_AgeCalculator
 open index.html
 ```
 

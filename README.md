@@ -44,7 +44,7 @@ open index.html
 
 ## Usage
 
-1. Enter your **day**, **month**, and **year** of birth into the respective fields.
+1. Enter your **day**, **month**, and **year** of birth into the calender field.
 2. Click the **Calculate** button.
 3. Your exact age will be displayed below the button.
 

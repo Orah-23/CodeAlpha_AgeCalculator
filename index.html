@@ -13,29 +13,48 @@
     <link rel="stylesheet" href="Styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Age Calculator</h1>
-        <div class="error" id="error"></div>
+    <div class="page">
+        <div class="card">
+            <div class="card-header">
+                <h1>Age calculator</h1>
+                <p>Enter your date of birth to see your exact age</p>
+            </div>
 
-        <div class="form-grid">
-            <label for="day">Day</label>
-            <input type="number" id="day" placeholder="DD" min="1" max="31">
+            <!-- Input field for date of birth -->
+            <div class="field">
+                <label for="calBirthDate">Date of birth</label>
+                <input type="date" id="calBirthDate" max="" oninput="onDateChange()">
+            </div>
 
-            <label for="month">Month</label>
-            <input type="number" id="month" placeholder="MM" min="1" max="12">
+            <!-- Button to trigger age calculation -->
+            <button class="btn" onclick="calculateAge()">Calculate age</button>
 
-            <label for="year">Year</label>
-            <input type="number" id="year" placeholder="YYYY">
+            <!-- Error message display -->
+            <div class="error" id="error"></div>
+
+            <!-- Display Age -->
+            <div class="result-wrap" id="resultWrap">
+                <div class="result-label">Your age</div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="num" id="lblYears">0</div>
+                        <div class="unit">years</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" id="lblMonths">0</div>
+                        <div class="unit">months</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" id="lblDays">0</div>
+                        <div class="unit">days</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <button onclick="calculateAge()">Calculate</button>
-        <div class="result" id="result"></div>
+        <!-- Footer -->
+        <p class="footer">&copy; 2026 &mdash; F.O. Kgatlhanye. All rights reserved.</p>
     </div>
-
-    <footer class="footer">
-        <p>&copy; 2026 - F.O. Kgatlhanye. All rights reserved.</p>
-    </footer>
-    
     <script src="js/script.js"></script>
 </body>
 </html>

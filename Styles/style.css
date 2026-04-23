@@ -4,107 +4,163 @@
  * Description: Styles for the Age Calculator web application.
  */
 
+/* ===== RESET ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== BODY & PAGE LAYOUT ===== */
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: #0f1117;
+    background: #f5f4f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 24px 0;
-    box-sizing: border-box;
-}
-.container {
-    background: #1a1d27;
-    padding: 36px 32px;
-    border-radius: 16px;
-    border: 0.5px solid #2e3347;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 24px rgba(0,0,0,0.3);
-    text-align: center;
-    width: 340px;
-}
-h1 {
-    margin-bottom: 24px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #8daac7;
-    letter-spacing: -0.3px;
-}
-.form-grid {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    align-items: center;
-    gap: 10px 12px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-.form-grid label {
-    font-size: 14px;
-    color: #8b92a5;
-    font-weight: 400;
-}
-.form-grid input {
     width: 100%;
-    box-sizing: border-box;
 }
-input {
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 0.5px solid #2e3347;
-    text-align: center;
+
+/* ===== CARD ===== */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 0.5px solid #e2e0da;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.card-header {
+    margin-bottom: 2rem;
+}
+
+.card-header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.card-header p {
+    font-size: 13px;
+    color: #888780;
+}
+
+/* ===== FORM FIELD ===== */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5f5e5a;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.field input[type="date"] {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0.5px solid #d3d1c7;
     font-size: 15px;
-    color: #f1f5f9;
-    background: #12151f;
-    transition: border-color 0.15s, background 0.15s;
+    color: #1a1a1a;
+    background: #fafaf8;
     outline: none;
+    width: 100%;
+    transition: border-color 0.15s;
 }
-input:focus {
-    border-color: #4a7fdd;
-    background: #161926;
-    box-shadow: 0 0 0 3px rgba(74, 127, 221, 0.15);
+
+.field input[type="date"]:focus {
+    border-color: #534ab7;
+    box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
+    background: #fff;
 }
-input::placeholder {
-    color: #3e4559;
-}
-button {
-    margin-top: 20px;
-    padding: 11px 24px;
+
+/* ===== BUTTON ===== */
+.btn {
+    width: 100%;
+    padding: 12px;
     border: none;
-    background: #2563eb;
+    background: #534ab7;
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
-    letter-spacing: 0.1px;
     transition: background 0.15s, transform 0.1s;
+    margin-top: 0.5rem;
 }
-button:hover {
-    background: #3b72f5;
-}
-button:active {
-    transform: scale(0.98);
-}
-.result {
-    margin-top: 24px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #f1f5f9;
-}
+
+.btn:hover { background: #7f77dd; }
+.btn:active { transform: scale(0.98); }
+
+/* ===== ERROR MESSAGE ===== */
 .error {
-    color: #f87171;
-    margin-bottom: 16px;
     font-size: 13px;
-    min-height: 18px;
+    color: #a32d2d;
+    background: #fcebeb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 1rem;
+    display: none;
 }
-.footer {
-    margin-top: 20px;
+
+/* ===== Result ===== */
+.result-wrap {
+    margin-top: 1.5rem;
+    border-top: 0.5px solid #e2e0da;
+    padding-top: 1.5rem;
+    display: none;
+}
+
+.result-label {
     font-size: 12px;
-    color: #3e4559;
+    color: #888780;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat {
+    background: #f5f4f0;
+    border-radius: 10px;
+    padding: 14px 10px;
     text-align: center;
 }
-.footer p {
-    margin: 0;
+
+.stat .num {
+    font-size: 26px;
+    font-weight: 500;
+    color: #534ab7;
+    line-height: 1;
+}
+
+.stat .unit {
+    font-size: 12px;
+    color: #888780;
+    margin-top: 4px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    font-size: 12px;
+    color: #b4b2a9;
+    margin-top: 1.5rem;
+    text-align: center;
 }
